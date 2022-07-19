@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: aquamarine;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+
+#gameBoard {
+    width: 60vmin;
+    height: 60vmin;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.box {
+    background-color: lightskyblue;
+    border-radius: 10px;
+
+    display: grid;
+    place-content: center;
+
+    color: black;
+    font-size: 5em;
+}
+
+#title {
+    border: 1px dashed red;
+    font-family: 'Righteous';
+    font-size: 3em;
+}
+
+#stats {
+    border: 1px dashed red;
+    font-family: 'Montserrat';
+    font-size: 1em;
+}
