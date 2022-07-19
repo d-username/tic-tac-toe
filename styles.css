@@ -9,41 +9,65 @@ body {
     background-color: aquamarine;
     height: 100vh;
     width: 100vw;
-    display: flex;
+    display: grid;
+    justify-items: center;
     place-content: center;
-    align-items: center;
+    align-content: space-evenly;
 }
 
-#gameBoard {
-    width: 60vmin;
-    height: 60vmin;
+.gameBoard {
+    width: 50vmin;
+    height: 50vmin;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 20px;
 }
 
 .box {
     background-color: lightskyblue;
     border-radius: 10px;
+    min-width: 100px;
+    min-height: 100px;
 
     display: grid;
     place-content: center;
 
     color: black;
-    font-size: 5em;
+    font-size: 3em;
 
     cursor: pointer;
 }
 
 #title {
-    border: 1px dashed red;
     font-family: 'Righteous';
     font-size: 3em;
 }
 
-#stats {
-    border: 1px dashed red;
+.stats {
     font-family: 'Montserrat';
     font-size: 1em;
+}
+
+.start {
+    width: 50px;
+    height: 50px;
+}
+
+.restart {
+    width: 50px;
+    height: 50px;
+}
+
+.hide {
+    display: none;
+}
+
+.result {
+    background-color: blue;
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    align-self: center;
 }

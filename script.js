@@ -1,4 +1,4 @@
-let gameOver = false;
+// let gameOver = false;
 let currentPlayer = 'x';
 
 let possibleWins = [
@@ -13,9 +13,25 @@ let possibleWins = [
 ];
 
 const boxes = Array.from(document.querySelectorAll('.box'));
-
 boxes.forEach((box, index) => {
   box.addEventListener('click', () => playGame(index), { once: true });
+});
+
+const startButton = document.getElementById('start');
+const gameBoard = document.getElementById('gameBoard');
+const statusBar = document.getElementById('stats');
+const result = document.getElementById('result');
+const winner = document.getElementById('winner');
+const restartButton = document.getElementById('restart');
+
+startButton.addEventListener('click', () => {
+  gameBoard.classList.replace('hide', 'gameBoard');
+  statusBar.classList.replace('hide', 'stats');
+  startButton.classList.replace('start', 'hide');
+});
+
+restartButton.addEventListener('click', () => {
+  location.reload();
 });
 
 function playGame(index) {
@@ -58,7 +74,9 @@ function validateGame(index) {
   possibleWins.forEach((set) => {
     if (set[0] === set[1] && set[1] === set[2]) {
       console.log('winner is: ', currentPlayer);
-      gameOver = true;
+      //   gameOver = true;
+      winner.innerText = currentPlayer;
+      result.classList.replace('hide', 'result');
     }
   });
 }

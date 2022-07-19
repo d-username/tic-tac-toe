@@ -13,8 +13,9 @@
     />
   </head>
   <body>
-    <section id="title"></section>
-    <section id="gameBoard">
+    <section id="title">Tic Tac Toe</section>
+    <button id="start" class="start">play</button>
+    <section id="gameBoard" class="hide">
       <div id="one" class="box"></div>
       <div id="two" class="box"></div>
       <div id="three" class="box"></div>
@@ -25,7 +26,12 @@
       <div id="eight" class="box"></div>
       <div id="nine" class="box"></div>
     </section>
-    <section id="stats">
+    <section id="result" class="hide">
+      congrats <span id="winner"></span>
+      you win
+      <button id="restart" class="restart">play again</button>
+    </section>
+    <section id="stats" class="hide">
       current player
       <span id="currentPlayer">X</span>
     </section>
