@@ -1,5 +1,6 @@
-// let gameOver = false;
-let currentPlayer = 'x';
+let currentPlayer = 'X';
+let gameOver = false;
+let roundCound = 0;
 
 let possibleWins = [
   [0, 1, 2],
@@ -23,6 +24,7 @@ const statusBar = document.getElementById('stats');
 const result = document.getElementById('result');
 const winner = document.getElementById('winner');
 const restartButton = document.getElementById('restart');
+const resultTie = document.getElementById('result-align');
 
 startButton.addEventListener('click', () => {
   gameBoard.classList.replace('hide', 'gameBoard');
@@ -39,6 +41,7 @@ function playGame(index) {
   validateGame(index);
   updateCurrentPlayer();
   updateDisplayPlayer();
+  checkForTie();
 }
 
 function updateBoard(index) {
@@ -47,10 +50,10 @@ function updateBoard(index) {
 }
 
 function updateCurrentPlayer() {
-  if (currentPlayer === 'x') {
-    currentPlayer = 'o';
-  } else if (currentPlayer === 'o') {
-    currentPlayer = 'x';
+  if (currentPlayer === 'X') {
+    currentPlayer = 'O';
+  } else if (currentPlayer === 'O') {
+    currentPlayer = 'X';
   }
 }
 
@@ -72,13 +75,22 @@ function validateGame(index) {
   }
 
   possibleWins.forEach((set) => {
+    console.log(set);
     if (set[0] === set[1] && set[1] === set[2]) {
-      console.log('winner is: ', currentPlayer);
-      //   gameOver = true;
       winner.innerText = currentPlayer;
       result.classList.replace('hide', 'result');
+      gameOver = true;
     }
   });
+}
+
+function checkForTie() {
+  roundCound++;
+  if (roundCound === 9 && gameOver === false) {
+    resultTie.innerText = 'congrats, both of you win';
+    result.classList.replace('hide', 'result');
+    gameOver = true;
+  }
 }
 
 // DOCUMENTATION I USED

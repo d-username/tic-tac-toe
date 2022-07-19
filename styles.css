@@ -6,19 +6,18 @@
 }
 
 body {
-    background-color: aquamarine;
+    background-color: #9e9e9e;
     height: 100vh;
     width: 100vw;
     display: grid;
     justify-items: center;
     place-content: center;
-    align-content: space-evenly;
+    gap: 3em;
 }
 
 .gameBoard {
     width: 50vmin;
     height: 50vmin;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -26,38 +25,67 @@ body {
 }
 
 .box {
-    background-color: lightskyblue;
+    background-color: #ffd54f;
     border-radius: 10px;
     min-width: 100px;
     min-height: 100px;
-
     display: grid;
     place-content: center;
-
-    color: black;
-    font-size: 3em;
-
+    color: #000000;
+    font-size: 7em;
+    font-family: 'Righteous';
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     cursor: pointer;
+    transition: 0.7s;
+}
+
+.box:hover {
+    background-color: #ffa726;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 #title {
     font-family: 'Righteous';
     font-size: 3em;
+    color: #000000
 }
 
 .stats {
     font-family: 'Montserrat';
-    font-size: 1em;
+    font-size: 1.5em;
+    color: #000000;
+    font-weight: bold;
 }
 
 .start {
-    width: 50px;
-    height: 50px;
+    padding: 10px 25px;
+    background-color: #ffd54f;
+    color:  #000000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: 'Righteous';
+    font-size: 2em;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.start:hover {
+    background-color: #ffa726;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .restart {
-    width: 50px;
-    height: 50px;
+    padding: 10px 25px;
+    background-color: #9e9e9e;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: 'Righteous';
+    font-size: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .hide {
@@ -65,9 +93,28 @@ body {
 }
 
 .result {
-    background-color: blue;
-    width: 500px;
-    height: 250px;
+    background-color: #ffa726;
+    border-radius: 15px;
     position: absolute;
     align-self: center;
+    font-family: 'Montserrat';
+    font-size: 25px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    display: grid;
+    padding: 20px;
+    gap: 20px
+}
+
+#currentPlayer {
+    font-family: 'Righteous';
+    margin: 10px;
+}
+
+#winner {
+    font-family: 'Righteous';
+}
+
+.result-align{
+    margin: 15px;
+    font-family: 'Righteous';
 }
