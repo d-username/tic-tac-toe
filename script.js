@@ -37,11 +37,13 @@ restartButton.addEventListener('click', () => {
 });
 
 function playGame(index) {
-  updateBoard(index);
-  validateGame(index);
-  updateCurrentPlayer();
-  updateDisplayPlayer();
-  checkForTie();
+  if (!gameOver) {
+    updateBoard(index);
+    validateGame(index);
+    updateCurrentPlayer();
+    updateDisplayPlayer();
+    checkForTie();
+  }
 }
 
 function updateBoard(index) {
