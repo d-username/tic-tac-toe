@@ -77,7 +77,6 @@ function validateGame(index) {
   }
 
   possibleWins.forEach((set) => {
-    console.log(set);
     if (set[0] === set[1] && set[1] === set[2]) {
       winner.innerText = currentPlayer;
       result.classList.replace('hide', 'result');
@@ -89,7 +88,7 @@ function validateGame(index) {
 function checkForTie() {
   roundCound++;
   if (roundCound === 9 && gameOver === false) {
-    resultTie.innerText = 'congrats, both of you win';
+    resultTie.innerText = 'It is a tie, none of you win';
     result.classList.replace('hide', 'result');
     gameOver = true;
   }
